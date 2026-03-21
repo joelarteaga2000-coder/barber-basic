@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Web para Barbería | DiSo Web Studio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="logo.png" class="nav-logo" alt="Logo barbería">
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#gallery">Galería</a></li>
+                <li><a href="#location">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero">
+            <div class="hero-content">
+                <img src="logo.png" class="hero-logo" alt="Logo barbería">
+
+                <p class="hero-subtitle">
+                    Precisión. Estilo. Presencia.
+                </p>
+
+                <p style="max-width:700px; margin:0 auto 18px auto; color:rgba(255,255,255,0.88); font-size:14px; line-height:1.7;">
+                    Este sitio es un ejemplo de página web profesional para barberías.
+                </p>
+
+                <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20una%20página%20web%20como%20esta%20para%20mi%20barbería"
+                   class="whatsapp-btn hero-btn"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Quiero una página así
+                </a>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="services" class="reveal">
+            <h2>Servicios</h2>
+
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">✂</div>
+                    <h3>Corte clásico</h3>
+                    <p>Corte tradicional con tijera</p>
+                    <span>$200</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔥</div>
+                    <h3>Fade moderno</h3>
+                    <p>Técnica de degradado profesional</p>
+                    <span>$250</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🧔</div>
+                    <h3>Arreglo de barba</h3>
+                    <p>Perfilado y diseño profesional</p>
+                    <span>$150</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA -->
+        <section id="gallery" class="reveal">
+            <h2>Galería</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="image1.jpg" alt="Interior barbería" loading="lazy">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="image2.jpg" alt="Corte de cabello" loading="lazy">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="image1.jpg" alt="Herramientas barbería" loading="lazy">
+                </div>
+
+                <div class="gallery-item">
+                    <img src="image2.jpg" alt="Servicio barbería" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- UBICACIÓN -->
+        <section id="location" class="reveal">
+            <h2>Ubicación</h2>
+            <p>Av. Reforma 123, Ciudad de México</p>
+            <p>Lunes a Sábado · 10:00 AM – 8:00 PM</p>
+
+            <iframe
+                src="https://www.google.com/maps?q=Mexico%20City&output=embed"
+                width="100%"
+                height="300"
+                style="border: 0; border-radius: 10px;"
+                loading="lazy">
+            </iframe>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section id="final-cta" class="reveal">
+            <h2>¿Quieres una página como esta?</h2>
+            <p>Te creamos una web profesional para tu barbería que te genere más clientes.</p>
+
+            <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20una%20web%20como%20esta%20para%20mi%20barbería"
+               class="whatsapp-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+                Solicitar página
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demo web para barberías · DiSo Web Studio</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE -->
+    <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20una%20web%20como%20esta%20para%20mi%20barbería"
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Abrir WhatsApp">
+        💬
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
