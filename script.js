@@ -1,61 +1,105 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const reveals = document.querySelectorAll(".reveal");
-    const hero = document.getElementById("hero");
-    const header = document.querySelector("header");
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    const navItems = document.querySelectorAll(".nav-links a");
+/* ============================================================
+ELITE BARBER — Script FIXED FULL
+============================================================ */
 
-    function revealOnScroll() {
-        const windowHeight = window.innerHeight;
+(function () {
 
-        reveals.forEach(function (element) {
-            const elementTop = element.getBoundingClientRect().top;
-            const revealPoint = 120;
+document.body.classList.add('js-enabled');
 
-            if (elementTop < windowHeight - revealPoint) {
-                element.classList.add("active");
-            }
-        });
+// ── NAVBAR SCROLL ────────────────────────────────────────────
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+// ── MOBILE MENU ──────────────────────────────────────────────
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => {
+    navbar.classList.toggle('mobile-open');
+    const isOpen = navbar.classList.contains('mobile-open');
+    mobileMenu.style.display = isOpen ? 'flex' : 'none';
+
+    const spans = menuToggle.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      spans.forEach(s => {
+        s.style.transform = '';
+        s.style.opacity = '';
+      });
     }
+  });
+}
 
-    function heroParallax() {
-        if (!hero) return;
+// ── REVEAL ON SCROLL (FIXED) ─────────────────────────────────
+const revealElements = document.querySelectorAll('.reveal-up, .reveal-card');
 
-        const offset = window.pageYOffset;
-        hero.style.backgroundPositionY = offset * 0.25 + "px";
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
-
-    function handleHeaderScroll() {
-        if (!header) return;
-
-        if (window.pageYOffset > 50) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    }
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
-        });
-    }
-
-    if (navItems.length > 0 && navLinks) {
-        navItems.forEach(function (link) {
-            link.addEventListener("click", function () {
-                navLinks.classList.remove("active");
-            });
-        });
-    }
-
-    window.addEventListener("scroll", function () {
-        revealOnScroll();
-        heroParallax();
-        handleHeaderScroll();
-    });
-
-    revealOnScroll();
-    handleHeaderScroll();
+  });
+}, {
+  threshold: 0.1
 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// 🔥 FALLBACK (EVITA PANTALLA NEGRA)
+setTimeout(() => {
+  document.querySelectorAll('.reveal-up, .reveal-card').forEach(el => {
+    el.classList.add('visible');
+  });
+}, 500);
+
+// ── STAT BAR ────────────────────────────────────────────────
+const statBar = document.querySelector('.stat-bar-fill');
+
+if (statBar) {
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        statBar.classList.add('animated');
+      }
+    });
+  });
+
+  barObserver.observe(statBar);
+}
+
+// ── SMOOTH SCROLL ───────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// ── PARALLAX ────────────────────────────────────────────────
+const heroBgText = document.querySelector('.hero-bg-text');
+
+if (heroBgText) {
+  window.addEventListener('scroll', () => {
+    heroBgText.style.transform =
+      `translate(-50%, calc(-50% + ${window.scrollY * 0.3}px))`;
+  });
+}
+
+})();
