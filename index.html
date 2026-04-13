@@ -1,272 +1,370 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elite Barber | Barbería Premium</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>The Sovereign — Barbería de Ultra Lujo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Tenor+Sans&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
 
-  <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-brand">
-        <img src="logo.png" alt="Elite Barber" class="nav-logo">
+  <!-- GRAIN OVERLAY -->
+  <div class="grain-overlay"></div>
+
+  <!-- FLOATING BOOK BUTTON -->
+  <a href="#reservar" class="book-float" id="bookFloat">
+    <span class="book-float-line"></span>
+    <span>Reservar Cita</span>
+    <span class="book-float-line"></span>
+  </a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-the">The</span>
+        <span class="nav-logo-main">Sovereign</span>
       </a>
-      <nav class="nav-links">
-        <a href="#bento">Servicios</a>
-        <a href="#gallery">Galería</a>
-        <a href="#location">Ubicación</a>
-      </nav>
-      <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20reservar%20una%20cita" class="nav-cta" target="_blank">
-        Reservar cita
-      </a>
-      <button class="menu-toggle" id="menuToggle">
-        <span></span><span></span><span></span>
+      <div class="nav-links">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#maestro" class="nav-link">El Maestro</a>
+        <a href="#filosofia" class="nav-link">Filosofía</a>
+        <a href="#reservar" class="nav-link nav-link-cta">Reservar</a>
+      </div>
+      <button class="nav-burger" id="navBurger">
+        <span></span><span></span>
       </button>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#bento">Servicios</a>
-      <a href="#gallery">Galería</a>
-      <a href="#location">Ubicación</a>
-      <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20reservar%20una%20cita" class="mobile-cta" target="_blank">Reservar cita</a>
-    </div>
-  </header>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#servicios" class="mm-link">Servicios</a>
+    <a href="#maestro" class="mm-link">El Maestro</a>
+    <a href="#filosofia" class="mm-link">Filosofía</a>
+    <a href="#reservar" class="mm-link">Reservar</a>
+  </div>
 
   <main>
 
-```
-<!-- HERO -->
-<section id="hero" class="hero">
-  <div class="hero-bg-text" aria-hidden="true">BARBER</div>
-  <div class="hero-noise"></div>
-  <div class="hero-content">
-    <div class="hero-tag reveal-up">
-      <span class="tag-dot"></span>
-      Ciudad de México · Est. 2020
-    </div>
-    <h1 class="hero-title reveal-up delay-1">
-      Precisión.<br>
-      <em>Estilo.</em><br>
-      Presencia.
-    </h1>
-    <p class="hero-desc reveal-up delay-2">
-      Este sitio es un ejemplo de página web profesional para barberías.
-    </p>
-    <div class="hero-actions reveal-up delay-3">
-      <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20una%20p%C3%A1gina%20web%20como%20esta%20para%20mi%20barber%C3%ADa" class="btn-primary" target="_blank">
-        Quiero una página así
-      </a>
-      <a href="#bento" class="btn-ghost">Ver servicios</a>
-    </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<!-- BENTO GRID -->
-<section id="bento" class="bento-section">
-  <div class="section-label reveal-up">Servicios & experiencia</div>
-  <div class="bento-grid">
-
-    <!-- Card grande — Corte clásico -->
-    <div class="bento-card bento-large reveal-card">
-      <div class="bento-card-inner">
-        <div class="service-number">01</div>
-        <div class="service-icon-lg">✂</div>
-        <h3>Corte clásico</h3>
-        <p>Corte tradicional con tijera, acabado impecable y atención al detalle en cada línea.</p>
-        <div class="service-price">$200</div>
-        <div class="service-tag">Popular</div>
+    <!-- ══ HERO ══ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1800&q=85&auto=format&fit=crop" alt="The Sovereign" class="hero-bg-img" id="heroBgImg">
+        <div class="hero-bg-overlay"></div>
       </div>
-    </div>
 
-    <!-- Card — Fade moderno -->
-    <div class="bento-card reveal-card delay-1">
-      <div class="bento-card-inner">
-        <div class="service-number">02</div>
-        <div class="service-icon-lg">🔥</div>
-        <h3>Fade moderno</h3>
-        <p>Técnica de degradado profesional con transición impecable.</p>
-        <div class="service-price">$250</div>
-      </div>
-    </div>
-
-    <!-- Card — Barba -->
-    <div class="bento-card reveal-card delay-2">
-      <div class="bento-card-inner">
-        <div class="service-number">03</div>
-        <div class="service-icon-lg">🧔</div>
-        <h3>Arreglo de barba</h3>
-        <p>Perfilado y diseño profesional para una barba más limpia y definida.</p>
-        <div class="service-price">$150</div>
-      </div>
-    </div>
-
-    <!-- Card stats — Clientes -->
-    <div class="bento-card bento-stat reveal-card delay-1">
-      <div class="bento-card-inner">
-        <div class="stat-number">500+</div>
-        <div class="stat-label">Clientes satisfechos</div>
-        <div class="stat-stars">★★★★★</div>
-      </div>
-    </div>
-
-    <!-- Card stats — Años -->
-    <div class="bento-card bento-stat bento-accent reveal-card delay-2">
-      <div class="bento-card-inner">
-        <div class="stat-number">4+</div>
-        <div class="stat-label">Años de experiencia</div>
-        <div class="stat-bar">
-          <div class="stat-bar-fill"></div>
+      <div class="hero-content">
+        <div class="hero-left">
+          <div class="hero-eyebrow reveal-el">
+            <span class="eyebrow-dash"></span>
+            Establecido · Ciudad de México · 2009
+          </div>
+          <h1 class="hero-title reveal-el">
+            <span class="hero-title-the">The</span>
+            <span class="hero-title-main">Sovereign</span>
+          </h1>
+          <p class="hero-sub reveal-el">
+            Donde cada detalle es un ritual.<br>
+            Donde cada cliente es un rey.
+          </p>
+          <div class="hero-cta-group reveal-el">
+            <a href="#reservar" class="btn-primary">Reservar cita privada</a>
+            <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Card horarios -->
-    <div class="bento-card bento-hours reveal-card delay-3">
-      <div class="bento-card-inner">
-        <div class="hours-label">Horario</div>
-        <div class="hours-grid">
-          <div class="hours-row">
-            <span>Lun — Vie</span>
-            <span class="hours-time">10:00 — 20:00</span>
-          </div>
-          <div class="hours-divider"></div>
-          <div class="hours-row">
-            <span>Sábado</span>
-            <span class="hours-time">10:00 — 18:00</span>
-          </div>
-          <div class="hours-divider"></div>
-          <div class="hours-row">
-            <span>Domingo</span>
-            <span class="hours-closed">Cerrado</span>
+        <div class="hero-right reveal-el">
+          <div class="hero-img-frame">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=85&auto=format&fit=crop" alt="Barbería" class="hero-frame-img">
+            <div class="hero-frame-border"></div>
+            <div class="hero-frame-tag">
+              <span class="tag-num">15+</span>
+              <span class="tag-label">años de maestría</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Card CTA WhatsApp -->
-    <div class="bento-card bento-cta reveal-card">
-      <div class="bento-card-inner">
-        <div class="cta-icon">💬</div>
-        <h3>Agenda tu cita</h3>
-        <p>Reserva directamente por WhatsApp en segundos.</p>
-        <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20reservar%20una%20cita" class="btn-primary btn-sm" target="_blank">
-          Reservar ahora →
-        </a>
+      <div class="hero-scroll">
+        <div class="scroll-line-v"></div>
+        <span>Descender</span>
+      </div>
+    </section>
+
+    <!-- ══ MARQUEE ══ -->
+    <div class="marquee-wrap">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>Corte Signature</span><span class="mdot">✦</span>
+        <span>Barba Ritual</span><span class="mdot">✦</span>
+        <span>Whisky Bar</span><span class="mdot">✦</span>
+        <span>Tratamientos</span><span class="mdot">✦</span>
+        <span>Hot Towel</span><span class="mdot">✦</span>
+        <span>The Sovereign Experience</span><span class="mdot">✦</span>
+        <span>Corte Signature</span><span class="mdot">✦</span>
+        <span>Barba Ritual</span><span class="mdot">✦</span>
+        <span>Whisky Bar</span><span class="mdot">✦</span>
+        <span>Tratamientos</span><span class="mdot">✦</span>
+        <span>Hot Towel</span><span class="mdot">✦</span>
+        <span>The Sovereign Experience</span><span class="mdot">✦</span>
       </div>
     </div>
 
-  </div>
-</section>
+    <!-- ══ BENTO SERVICIOS ══ -->
+    <section class="servicios" id="servicios">
+      <div class="section-header reveal-el">
+        <div class="section-eyebrow">Nuestros servicios</div>
+        <h2 class="section-title">El arte del<br><em>caballero moderno</em></h2>
+      </div>
 
-<!-- GALERÍA -->
-<section id="gallery" class="gallery-section">
-  <div class="section-label reveal-up">Galería</div>
-  <h2 class="section-title reveal-up delay-1">Nuestro trabajo<br><em>habla por sí solo</em></h2>
-  <div class="gallery-grid">
-    <div class="gallery-item gallery-tall reveal-card">
-      <img src="image1.jpg" alt="Interior barbería" loading="lazy">
-      <div class="gallery-overlay">Interior</div>
-    </div>
-    <div class="gallery-item reveal-card delay-1">
-      <img src="image2.jpg" alt="Corte de cabello" loading="lazy">
-      <div class="gallery-overlay">Cortes</div>
-    </div>
-    <div class="gallery-item reveal-card delay-2">
-      <img src="image1.jpg" alt="Herramientas" loading="lazy">
-      <div class="gallery-overlay">Detalle</div>
-    </div>
-    <div class="gallery-item gallery-wide reveal-card delay-1">
-      <img src="image2.jpg" alt="Servicio" loading="lazy">
-      <div class="gallery-overlay">Experiencia</div>
-    </div>
-  </div>
-</section>
+      <div class="bento-grid">
 
-<!-- UBICACIÓN -->
-<section id="location" class="location-section">
-  <div class="location-grid">
-    <div class="location-info reveal-up">
-      <div class="section-label">Encuéntranos</div>
-      <h2 class="section-title">Visítanos<br><em>cuando quieras</em></h2>
-      <div class="location-details">
-        <div class="location-item">
-          <span class="location-icon">📍</span>
-          <div>
-            <strong>Dirección</strong>
-            <p>Av. Reforma 123, Ciudad de México</p>
+        <!-- GRANDE: Corte Signature -->
+        <div class="bento-cell bento-hero reveal-el" data-tilt>
+          <div class="bento-bg">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=80&auto=format&fit=crop" alt="Corte Signature" class="bento-img">
+          </div>
+          <div class="bento-overlay-grad"></div>
+          <div class="bento-content">
+            <div class="bento-tag">Servicio Estrella</div>
+            <h3 class="bento-title">Corte<br><em>Signature</em></h3>
+            <p class="bento-desc">60 min de experiencia total. Consulta, lavado ritual, corte de precisión y acabado con navaja.</p>
+            <div class="bento-price">$850 MXN</div>
+          </div>
+          <div class="bento-glow"></div>
+        </div>
+
+        <!-- Barba Ritual -->
+        <div class="bento-cell bento-sm reveal-el" data-tilt>
+          <div class="bento-bg">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80&auto=format&fit=crop" alt="Barba Ritual" class="bento-img">
+          </div>
+          <div class="bento-overlay-grad"></div>
+          <div class="bento-content">
+            <div class="bento-tag">Ritual</div>
+            <h3 class="bento-title">Barba<br><em>Ritual</em></h3>
+            <div class="bento-price">$550 MXN</div>
+          </div>
+          <div class="bento-glow"></div>
+        </div>
+
+        <!-- Whisky Bar -->
+        <div class="bento-cell bento-sm bento-dark reveal-el" data-tilt>
+          <div class="bento-content bento-content-center">
+            <div class="bento-icon">◈</div>
+            <h3 class="bento-title">Whisky Bar</h3>
+            <p class="bento-desc-sm">Cortesía de la casa. Selección de single malts premium mientras esperas.</p>
+            <div class="bento-badge">Incluido</div>
+          </div>
+          <div class="bento-glow"></div>
+        </div>
+
+        <!-- Hot Towel -->
+        <div class="bento-cell bento-sm reveal-el" data-tilt>
+          <div class="bento-bg">
+            <img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fb6b8?w=600&q=80&auto=format&fit=crop" alt="Hot Towel" class="bento-img">
+          </div>
+          <div class="bento-overlay-grad"></div>
+          <div class="bento-content">
+            <div class="bento-tag">Clásico</div>
+            <h3 class="bento-title">Hot Towel<br><em>Shave</em></h3>
+            <div class="bento-price">$650 MXN</div>
+          </div>
+          <div class="bento-glow"></div>
+        </div>
+
+        <!-- Tratamientos -->
+        <div class="bento-cell bento-wide bento-accent reveal-el" data-tilt>
+          <div class="bento-bg">
+            <img src="https://images.unsplash.com/photo-1572441713132-51c75654db73?w=1000&q=80&auto=format&fit=crop" alt="Tratamientos" class="bento-img">
+          </div>
+          <div class="bento-overlay-grad"></div>
+          <div class="bento-content bento-content-row">
+            <div>
+              <div class="bento-tag">Premium</div>
+              <h3 class="bento-title">Tratamientos<br><em>Capilares</em></h3>
+            </div>
+            <div class="bento-right-col">
+              <p class="bento-desc">Keratina · Hidratación · Anti-caída · Color</p>
+              <div class="bento-price">Desde $1,200 MXN</div>
+            </div>
+          </div>
+          <div class="bento-glow"></div>
+        </div>
+
+        <!-- Stat -->
+        <div class="bento-cell bento-stat reveal-el">
+          <div class="bento-content bento-content-center">
+            <div class="stat-num">2,400<span>+</span></div>
+            <div class="stat-label">Clientes satisfechos<br>al año</div>
           </div>
         </div>
-        <div class="location-item">
-          <span class="location-icon">🕐</span>
-          <div>
-            <strong>Horario</strong>
-            <p>Lunes a Sábado · 10:00 AM – 8:00 PM</p>
+
+      </div>
+    </section>
+
+    <!-- ══ MAESTRO ══ -->
+    <section class="maestro" id="maestro">
+      <div class="maestro-inner">
+
+        <div class="maestro-left reveal-el">
+          <div class="maestro-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=85&auto=format&fit=crop&grayscale"
+              class="maestro-img maestro-img-bw"
+              alt="El Maestro"
+            >
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=85&auto=format&fit=crop"
+              class="maestro-img maestro-img-color"
+              alt="El Maestro"
+            >
+            <div class="maestro-img-border"></div>
+            <div class="maestro-img-tag">
+              <span>Master Barber</span>
+            </div>
           </div>
         </div>
-        <div class="location-item">
-          <span class="location-icon">💬</span>
-          <div>
-            <strong>WhatsApp</strong>
-            <p>+52 55 2505 1050</p>
+
+        <div class="maestro-right reveal-el">
+          <div class="section-eyebrow">El Maestro</div>
+          <h2 class="maestro-title">Alessandro<br><em>De la Cruz</em></h2>
+          <div class="maestro-divider"></div>
+          <p class="maestro-bio">
+            Formado en las barberías más exigentes de Londres y Milán, Alessandro regresó a México con una visión clara: crear un espacio donde el grooming masculino fuera elevado a la categoría de arte.
+          </p>
+          <p class="maestro-bio" style="margin-top:16px;">
+            Con más de 15 años perfeccionando su técnica y habiendo atendido a figuras del mundo empresarial, político y del entretenimiento, Alessandro es el guardián del estándar Sovereign.
+          </p>
+
+          <div class="maestro-stats">
+            <div class="ms-item">
+              <div class="ms-num">15+</div>
+              <div class="ms-label">Años de maestría</div>
+            </div>
+            <div class="ms-sep"></div>
+            <div class="ms-item">
+              <div class="ms-num">3</div>
+              <div class="ms-label">Países de formación</div>
+            </div>
+            <div class="ms-sep"></div>
+            <div class="ms-item">
+              <div class="ms-num">#1</div>
+              <div class="ms-label">CDMX 2023–2024</div>
+            </div>
+          </div>
+
+          <a href="#reservar" class="btn-primary" style="margin-top:40px;display:inline-flex;">Reservar con Alessandro →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ FILOSOFIA ══ -->
+    <section class="filosofia" id="filosofia">
+      <div class="filosofia-bg">
+        <img src="https://images.unsplash.com/photo-1572441713132-51c75654db73?w=1800&q=80&auto=format&fit=crop" alt="The Sovereign" class="filosofia-bg-img">
+        <div class="filosofia-overlay"></div>
+      </div>
+      <div class="filosofia-content reveal-el">
+        <div class="section-eyebrow" style="color:var(--gold);">Nuestra Filosofía</div>
+        <blockquote class="filosofia-quote">
+          "Un hombre bien arreglado<br>no es vanidad.<br><em>Es respeto propio."</em>
+        </blockquote>
+        <div class="filosofia-attr">— Alessandro De la Cruz, Fundador</div>
+      </div>
+    </section>
+
+    <!-- ══ RESERVAR ══ -->
+    <section class="reservar" id="reservar">
+      <div class="reservar-inner">
+        <div class="reservar-left reveal-el">
+          <div class="section-eyebrow">Reservaciones</div>
+          <h2 class="reservar-title">Tu cita,<br><em>tu trono.</em></h2>
+          <div class="reservar-info">
+            <div class="ri-item">
+              <span class="ri-label">Dirección</span>
+              <span>Presidente Masaryk 123, Polanco</span>
+            </div>
+            <div class="ri-item">
+              <span class="ri-label">Horario</span>
+              <span>Lun–Sáb · 9:00 – 20:00</span>
+            </div>
+            <div class="ri-item">
+              <span class="ri-label">WhatsApp</span>
+              <span>+52 55 0000 0000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservar-right reveal-el">
+          <div class="reservar-form-wrap">
+            <div class="form-header">
+              <div class="form-title">Solicitar Cita Privada</div>
+              <div class="form-sub">Respuesta en menos de 2 horas</div>
+            </div>
+            <form class="reservar-form" id="reservarForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                  <label>Teléfono</label>
+                  <input type="tel" placeholder="+52 55 0000 0000">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Servicio</label>
+                <select>
+                  <option value="">Selecciona un servicio</option>
+                  <option>Corte Signature — $850</option>
+                  <option>Barba Ritual — $550</option>
+                  <option>Hot Towel Shave — $650</option>
+                  <option>Tratamiento Capilar — desde $1,200</option>
+                  <option>Experiencia Completa — $1,600</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Fecha preferida</label>
+                <input type="date">
+              </div>
+              <button type="submit" class="btn-submit">
+                <span>Confirmar Reservación</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20reservar%20una%20cita" class="btn-primary" target="_blank">
-        Agendar por WhatsApp
-      </a>
-    </div>
-    <div class="location-map reveal-card delay-2">
-      <iframe
-        src="https://www.google.com/maps?q=Mexico%20City&output=embed"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section id="final-cta" class="final-cta">
-  <div class="final-cta-inner reveal-up">
-    <div class="section-label">¿Quieres una página así?</div>
-    <h2 class="final-title">Tu barbería merece<br><em>verse premium</em></h2>
-    <p>Páginas web profesionales para barberías. Listas en 72 horas.</p>
-    <a href="https://wa.me/5215525051050?text=Hola,%20quiero%20una%20web%20como%20esta%20para%20mi%20barber%C3%ADa" class="btn-primary btn-lg" target="_blank">
-      Solicitar página web →
-    </a>
-    <div class="final-badge">DiSo Web Studio · desde $2,500 MXN</div>
-  </div>
-</section>
-```
+    </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Demo web para barberías · <strong>DiSo Web Studio</strong></p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-the">The</span>
+        <span class="footer-main">Sovereign</span>
+      </div>
+      <div class="footer-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#maestro">El Maestro</a>
+        <a href="#reservar">Reservar</a>
+      </div>
+      <div class="footer-copy">© 2026 The Sovereign · Barbería de Ultra Lujo · CDMX</div>
+    </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE -->
-
-<a href="https://wa.me/5215525051050?text=Hola,%20quiero%20una%20web%20como%20esta%20para%20mi%20barber%C3%ADa"
-class="whatsapp-float"
-target="_blank"
-rel="noopener noreferrer"
-aria-label="Abrir WhatsApp">
-💬
-</a>
-
   <script src="script.js"></script>
-
 </body>
 </html>
