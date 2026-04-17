@@ -9,15 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Tenor+Sans&family=Lato:wght@300;400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
-<script>
-  const n = new URLSearchParams(window.location.search).get('negocio');
-  if (n) {
-    const nombre = decodeURIComponent(n);
-    document.querySelectorAll('.nombre-negocio').forEach(el => el.textContent = nombre);
-    document.title = nombre + ' — Barbería';
-  }
-</script>	
+	
 </head>
+
 <body>
 
   <!-- CURSOR -->
@@ -374,5 +368,13 @@
   </footer>
 
   <script src="script.js"></script>
+<script>
+  const n = new URLSearchParams(window.location.search).get('negocio');
+  if (n) {
+    const nombre = decodeURIComponent(n);
+    document.querySelectorAll('.nombre-negocio').forEach(el => el.textContent = nombre);
+    document.title = nombre + ' — Barbería';
+  }
+</script>
 </body>
 </html>
