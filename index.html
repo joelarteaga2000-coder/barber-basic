@@ -9,6 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Tenor+Sans&family=Lato:wght@300;400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
+<script>
+  const n = new URLSearchParams(window.location.search).get('negocio');
+  if (n) {
+    const nombre = decodeURIComponent(n);
+    document.querySelectorAll('.nombre-negocio').forEach(el => el.textContent = nombre);
+    document.title = nombre + ' — Barbería';
+  }
+</script>	
 </head>
 <body>
 
@@ -70,7 +78,7 @@
           </div>
           <h1 class="hero-title reveal-el">
             <span class="hero-title-the">The</span>
-            <span class="hero-title-main">Sovereign</span>
+            <span class="hero-title-main nombre-negocio">Sovereign</span>
           </h1>
           <p class="hero-sub reveal-el">
             Donde cada detalle es un ritual.<br>
@@ -354,7 +362,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <span class="footer-the">The</span>
-        <span class="footer-main">Sovereign</span>
+        <span class="footer-main nombre-negocio">Sovereign</span>
       </div>
       <div class="footer-links">
         <a href="#servicios">Servicios</a>
