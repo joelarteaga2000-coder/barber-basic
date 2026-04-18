@@ -746,3 +746,45 @@ a { text-decoration:none; color:inherit; }
     display: none;
   }
 }
+
+@media (max-width: 900px) {
+
+  /* RESET GENERAL */
+  .bento-content-row {
+    display: block !important;
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px;
+  }
+
+  .bento-right-col {
+    position: static !important;
+    text-align: left !important;
+    margin-top: 8px;
+  }
+
+  .bento-content-row > div:first-child {
+    margin-bottom: 8px;
+  }
+
+  .bento-title {
+    font-size: 24px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .bento-desc-sm,
+  .bento-desc {
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .bento-price {
+    font-size: 22px;
+    margin-top: 10px;
+    display: block;
+  }
+}
